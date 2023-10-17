@@ -1,0 +1,671 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-image: url("img/bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: url("img/blood.png"), auto;
+}
+
+.bat {
+    position: absolute;
+    display: flex;
+    width: 40px;
+    height: 60px;
+    top: 5%;
+    right: 5%;
+    background-image: url("img/bat.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 999;
+    cursor: url("img/point.png"), auto;
+}
+
+#home {
+    position: absolute;
+    left: 20%;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+}
+
+#home h1,
+#home h2,
+#home h3,
+#home h4,
+#home h5,
+#home h6 {
+    color: white;
+    padding: 40px;
+}
+
+#fengmian {
+    position: relative;
+    display: block;
+}
+
+#fengmian h1 {
+    font-size: 60px;
+    font-weight: 1000;
+}
+
+#typing {
+    position: relative;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#typing h1 {
+    font-weight: 400;
+}
+
+span#mark {
+    border-right: 2px solid white;
+    animation: blink 0.6s step-end infinite;
+}
+
+@keyframes blink {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: white;
+    }
+}
+
+#login {
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    color: white;
+    display: flex;
+    background-color: rgba(232, 154, 161, 0.5);
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+#userID,
+#Password {
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgba(254, 206, 206, 0.797);
+}
+
+#but input:hover {
+    content: "";
+    background-color: #FF85A4;
+}
+
+#but {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cancel,
+#submit {
+    font-size: large;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-top: 6px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: orange;
+    cursor: url("img/point.png"), auto;
+}
+
+#main {
+    width: 80%;
+    height: 80%;
+    float: right;
+    position: relative;
+    border-radius: 20px;
+}
+
+#info {
+    width: 20%;
+    height: 100%;
+    background: none;
+    float: left;
+    display: flex;
+    position: relative;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: none;
+    z-index: 9;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: all 2s;
+    -moz-transition: all 2s;
+    -webkit-transition: all 2s;
+    -o-transition: all 2s;
+}
+
+#photo {
+    top: 30%;
+    position: relative;
+    /* background-image: url("img/person.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 50%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    cursor: url("img/point.png"), auto;
+}
+
+#photo,
+#photo::before,
+#photo::after {
+    content: "";
+    display: grid;
+    grid-area: 1/1;
+    aspect-ratio: 1;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 #93000083;
+    animation: pulsing 3s linear infinite var(--s, 0s);
+}
+
+#photo::before {
+    --s: 1s
+}
+
+#photo::after {
+    --s: 2s
+}
+
+@keyframes pulsing {
+    to {
+        box-shadow: 0 0 0 6rem #0000;
+    }
+}
+
+#backToHome {
+    top: 13%;
+    position: relative;
+    opacity: 0;
+    transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -webkit-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    cursor: url("img/point.png"), auto;
+}
+
+#information {
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    width: 80%;
+    height: 60%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ins {
+    width: 100%;
+    padding-top: 5%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+#name h1 {
+    color: white;
+    user-select: none;
+}
+
+.ins i {
+    float: left;
+    color: white;
+    font-size: 16px;
+    padding-top: 3px;
+}
+
+.ins h4 {
+    float: left;
+    padding-left: 4px;
+    color: white;
+    user-select: none;
+}
+
+#write {
+    position: absolute;
+    display: flex;
+    right: 5%;
+    bottom: 10%;
+    color: aliceblue;
+    font-size: 20px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    cursor: url("img/point.png"), auto;
+}
+
+#social {
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    user-select: none;
+}
+
+#social i {
+    color: white;
+}
+
+#dital {
+    width: 80%;
+    height: 100%;
+    float: left;
+    /* background-color: rosybrown; */
+    transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    opacity: 0;
+}
+
+#choose {
+    /* background-color: yellowgreen; */
+    width: 100%;
+    height: 7%;
+    position: relative;
+}
+
+.tip {
+    float: left;
+    width: 25%;
+    height: 100%;
+    font-size: medium;
+    color: black;
+    font-weight: 600;
+    background-color: rgba(125, 3, 15, 0.5);
+    box-sizing: border-box;
+    padding-top: 1%;
+    padding-left: 8%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    user-select: none;
+    color: white;
+    cursor: url("img/point.png"), auto;
+}
+
+#ch1 {
+    background-color: rgba(255, 55, 55, 0.4);
+}
+
+#content {
+    width: 100%;
+    height: 93%;
+    background-color: rgba(255, 55, 55, 0.4);
+    border-bottom-right-radius: 20px;
+    position: relative;
+}
+
+.message {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    user-select: none;
+    color: white;
+    font-weight: 500;
+    flex-direction: column;
+}
+
+.messages h2 {
+    font-weight: 600;
+}
+
+.texts p {
+    font-size: 20px;
+}
+
+.menu {
+    display: none;
+    background-color: rgba(75, 55, 55, 0.4);
+    width: 114%;
+}
+
+#dropmenu {
+    background-color: rgba(255, 9, 9, 0.4);
+    height: 100%;
+    width: 7%;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+    list-style: none;
+    margin-top: 10px;
+    padding-bottom: 5px;
+}
+
+li {
+    padding-top: 10px;
+    margin-bottom: 10px;
+    cursor: url("img/point.png"), auto;
+}
+
+li i {
+    float: right;
+}
+
+#ul1:hover #menu1 {
+    display: block;
+}
+
+#ul2:hover #menu2 {
+    display: block;
+}
+
+#ul3:hover #menu3 {
+    display: block;
+}
+
+#ul4:hover #menu4 {
+    display: block;
+}
+
+#visitTimes {
+    position: absolute;
+    left: 2%;
+    bottom: 5%;
+    user-select: none;
+    color: white;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+#weather {
+    position: absolute;
+    right: 0;
+    bottom: 2%;
+    user-select: none;
+}
+
+#icon {
+    width: 70px;
+    height: 60px;
+    position: relative;
+    left: -30px;
+}
+
+#icon img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    visibility: hidden;
+}
+
+#sky {
+    position: absolute;
+    top: 15px;
+    padding-right: 10px;
+    padding-top: 5px;
+    font-size: 30px;
+}
+
+#heat {
+    position: relative;
+    right: -5px;
+    padding-top: 5px;
+    font-size: 42px;
+    font-weight: 600;
+}
+
+#windmsg {
+    position: relative;
+    /* display: inline; */
+    font-size: 12px;
+    right: 11px;
+}
+
+#windmsg div {
+    padding-left: 5px;
+}
+
+#place {
+    right: 9px;
+}
+
+.weatherBox {
+    font-size: large;
+    color: white;
+    display: flex;
+    position: relative;
+    right: 0;
+}
+
+#relative {
+    position: absolute;
+    left: 1%;
+    top: 5%;
+    user-select: none;
+}
+
+.padding {
+    position: relative;
+    display: flex;
+}
+
+.hms,
+.ymd,
+.time-temp,
+.time-ltemp {
+    float: left;
+    display: flex;
+    padding-left: 3px;
+}
+
+.hms {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(-210deg, white 20%, red 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.ymd {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+.time-temp {
+    margin-top: -2px;
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+}
+
+.time-ltemp {
+    margin-top: -1px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+#week {
+    margin-left: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+#changeInfo {
+    /* opacity: 0; */
+    display: none;
+    position: absolute;
+    width: 76%;
+    height: 72%;
+    background-color: rgba(255, 9, 9, 0.4);
+    padding: 2%;
+    border-radius: 20px;
+}
+
+#changeInfo .s,
+#changeInfo input {
+    position: relative;
+    display: flex;
+    font-size: 20px;
+}
+
+#photoChange {
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* #picture {
+    width: 150px;
+    height: 150px;
+    background-image: url("img/person.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 50%;
+} */
+
+#personPhoto {
+    width: 150px;
+    height: 150px;
+    background-image: url("img/person.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 50%;
+}
+
+#exchange {
+    display: flex;
+}
+
+#exchange label {
+    position: absolute;
+    margin-top: 10px;
+    width: 90px;
+    height: 30px;
+    z-index: 1;
+    cursor: url("img/point.png"), auto;
+}
+
+#exchange span {
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+}
+
+#exchange i {
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+}
+
+.infoChange {
+    margin-left: 30%;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(254, 206, 206, 0.797);
+}
+
+#confirm {
+    position: absolute;
+    margin-left: 73%;
+    margin-top: -10%;
+    display: flex;
+}
+
+#confirm button {
+    float: left;
+    padding-top: 5px;
+    padding-bottom: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: orange;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: url("img/point.png"), auto;
+}
+
+#confirm button:hover {
+    content: "";
+    background-color: #FF85A4;
+}
+
+#changeInfo .s {
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    margin-left: 30%;
+}

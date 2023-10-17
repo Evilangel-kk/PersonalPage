@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/KCP.png" />
+    <script src="https://kit.fontawesome.com/9005b554ce.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>个人主页|信息</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        window._AMapSecurityConfig = {
+            securityJsCode: '5b06319e2e13b17005c0746e5c37c91c',
+        }
+    </script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=2.0&key=85e717141ecd6cc4c893107152c8c3d9"></script>
+    <script src="js/script.js"></script>
+    <script src="js/webSocket.js"></script>
+    <script src="js/flashTime.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/getWeather.js"></script>
+    <script src="js/batLook.js"></script>
+    <div id="follow" class="bat"></div>
+    <div id="main">
+        <div id="home">
+            <div id="fengmian">
+                <h1>Welcome to My Field</h1>
+            </div>
+            <h4>efgy gew iiy</h4>
+            <div id="typing">
+                <h1>
+                    <span id="text" data-text='["sgedf sfegy sefgi uisdgfi ydgfyu iysgf ysdg fyu","hs efg sfg yisagfy afusutq xzfcd yih","sa ddsfg sigf sdugug sidf gyj","sg fshf djys hsd vgjhs sdggy dy i"]'></span>
+                    <span id="mark"></span>
+                </h1>
+            </div>
+            <h3>efsd khfuo wgfhouew gfouw geuofwo ugouf gygewiiy</h3>
+        </div>
+        <div id="login">
+            <form autocomplete="off">
+                <span>账号:</span>
+                <input type="text" id="userID" size="13"><br>
+                <span>密码:</span>
+                <input type="password" id="Password" size="13"><br>
+                <div id="but">
+                    <input type="button" value="取消" id="cancel">
+                    <input type="button" value="确定" id="submit">
+                </div>
+            </form>
+        </div>
+        <div id="info">
+            <div id="photo"></div><br>
+            <div id="backToHome">
+                <i class="fa-solid fa-house" style="color:white"></i>
+            </div>
+            <div id="information">
+                <div id="name">
+                    <h1 class="t" id="personnameInfo">KCP</h1>
+                </div>
+                <div id="sex" class="ins">
+                    <i class="fa-solid fa-mars"></i>
+                    <h4 class="t" id="sexInfo">男</h4>
+                </div>
+                <div id="birth" class="ins">
+                    <i class="fa-sharp fa-solid fa-cake-candles"></i>
+                    <h4 class="t" id="birthInfo">2003-04-24</h4>
+                </div>
+                <div id="phoneNumber" class="ins">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <h4 class="t" id="phoneNumberInfo">158******19</h4>
+                </div>
+                <div id="email" class="ins">
+                    <i class="fa-sharp fa-solid fa-envelope"></i>
+                    <h4 class="t" id="emailInfo">2472047312@qq.com</h4>
+                </div>
+                <div id="address" class="ins">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4 class="t" id="placeInfo">湖南/长沙/中南大学</h4>
+                </div>
+            </div>
+            <div id="write">
+                <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+            <div id="social">
+                <i class="fa-brands fa-weixin" style="color:#04BE02"></i>
+                <i class="fa-brands fa-qq" style="color:#00c4ff"></i>
+                <i class="fa-brands fa-x-twitter" style="color:black"></i>
+                <i class="fa-brands fa-github" style="color:rgb(64, 120, 192)"></i>
+                <i class="fa-brands fa-facebook" style="color:#3b5998"></i>
+                <i class="fa-brands fa-instagram" style="color:white"></i>
+                <i class="fa-brands fa-youtube" style="color:red"></i>
+            </div>
+        </div>
+
+        <div id="dital">
+            <div id="choose">
+                <p id="ch1" class="tip">教育背景</p>
+                <p id="ch2" class="tip">项目经验</p>
+                <p id="ch3" class="tip">实习经历</p>
+                <p id="ch4" class="tip">技术栈</p>
+            </div>
+            <div id="content">
+                <div id="text1" class="message" style="visibility: visible;">
+                    <h2>待填写教育经历</h2>
+                </div>
+                <div id="text2" class="message" style="visibility: hidden;">
+                    <div id="dropmenu">
+                        <ul>
+                            <li id="ul1">C/C++<i class="fa-solid fa-caret-down"></i>
+                                <div id="menu1" class="menu">
+                                    <ul>
+                                        <li>aaaa</li>
+                                        <li>ssss</li>
+                                        <li>xxxx</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li id="ul2">Web<i class="fa-solid fa-caret-down"></i>
+                                <div id="menu2" class="menu">
+                                    <ul>
+                                        <li>gggg</li>
+                                        <li>rrrr</li>
+                                        <li>oooo</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li id="ul3">Java<i class="fa-solid fa-caret-down"></i>
+                                <div id="menu3" class="menu">
+                                    <ul>
+                                        <li>pppp</li>
+                                        <li>ffff</li>
+                                        <li>dddd</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li id="ul4">竞赛<i class="fa-solid fa-caret-down"></i>
+                                <div id="menu4" class="menu">
+                                    <ul>
+                                        <li>iiii</li>
+                                        <li>pppp</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="text3" class="message" style="visibility: hidden;">
+                    <h2>待补充实习经历</h2>
+                </div>
+                <div id="text4" class="message" style="visibility: hidden;">
+                    <h2>待完善技术栈</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="visitTimes">访问次数: <span id="visit"></span></div>
+    <div id="weather">
+        <div id="icon" class="weatherBox">
+            <img id="wind" src="img/weather/wind.png" alt="风">
+            <img id="cloud" src="img/weather/cloud.png" alt="少云">
+            <img id="clouds" src="img/weather/clouds.png" alt="多云">
+            <img id="rain" src="img/weather/rain.png" alt="雨">
+            <img id="snow" src="img/weather/snow.png" alt="雪">
+            <img id="sun-cloud" src="img/weather/sun-cloud.png" alt="晴间多云">
+            <img id="sun" src="img/weather/sun.png" alt="晴">
+            <img id="night" src="img/weather/night.png" alt="夜间">
+        </div>
+        <div id="sky" class="weatherBox">
+            <span id="hanzi"></span>
+        </div>
+        <div id="heat" class="weatherBox">
+            <span id="temperature"></span>
+            <span>℃</span>
+        </div>
+        <div id="windmsg" class="weatherBox">
+            <div id="power"> </div>
+            <div id="direction"></div>
+        </div>
+        <div id="place" class="weatherBox">
+            <span id="city"></span>
+        </div>
+    </div>
+    <div id="relative">
+        <div id="time" class="padding">
+            <div id="time-hour" class="hms">00</div>
+            <div class="time-temp">:</div>
+            <div id="time-minute" class="hms">00</div>
+            <div class="time-temp">:</div>
+            <div id="time-second" class="hms">00</div>
+        </div>
+        <div id="date" class="padding">
+            <div id="time-year" class="ymd">0000</div>
+            <div class="time-ltemp">-</div>
+            <div id="time-month" class="ymd">00</div>
+            <div class="time-ltemp">-</div>
+            <div id="time-day" class="ymd">00</div>
+        </div>
+        <div id="week" class="padding">星期</div>
+    </div>
+    <div id="changeInfo">
+        <div id="photoChange">
+            <img style="width:160px;height:160px;border-radius: 50%;" src="./img/" alt="" id="profile-pic">
+            <form id="uploadPicture" action="#">
+                <input style="display:none" type="file" accept="image/jpeg,image/jpg,image/png" id="input-file">
+            </form>
+            <div id="exchange">
+                <span>头像</span><i class="fa-solid fa-rotate"></i>
+                <label type="submit" for="input-file"></label>
+            </div>
+        </div>
+        <span class="s" size="5">姓名</span>
+        <input id="nameChange" class="infoChange"><br>
+        <span class="s" size="2">性别</span>
+        <input id="sexChange" class="infoChange"><br>
+        <span class="s">出生日期</span>
+        <input type="date" id="birthChange" class="infoChange"><br>
+        <span class="s" size="12">手机号码</span>
+        <input id="phoneNumberChange" class="infoChange"><br>
+        <span class="s">邮箱</span>
+        <input type="email" id="emailChange" class="infoChange"><br>
+        <span class="s">地址</span>
+        <input id="placeChange" class="infoChange"><br>
+        <div id="confirm">
+            <button type="button" id="cancelChange">取消修改</button>
+            <button type="button" id="confirmChange">确认修改</button>
+        </div>
+    </div>
+</body>
+
+</html>

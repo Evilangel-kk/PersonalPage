@@ -16,6 +16,15 @@ socket.addEventListener("message", function(e) {
         changeInfo.style.zIndex = 999;
         // changeInfo.style.opacity = 1;
         changeInfo.style.display = "block";
+        var editBtn1 = document.getElementById("editBtn1");
+        // var editBtn2 = document.getElementById("editBtn2");
+        // var editBtn3 = document.getElementById("editBtn3");
+        // var editBtn4 = document.getElementById("editBtn4");
+        editBtn1.style.display = "block";
+        // editBtn2.style.display = "block";
+        // editBtn3.style.display = "block";
+        // editBtn4.style.display = "block";
+
     } else if (e.data == "查询出错" || e.data == "用户不存在" || e.data == "密码错误") {
         alert(e.data);
     } else if (e.data.includes("visit")) {
@@ -41,5 +50,10 @@ socket.addEventListener("message", function(e) {
         var photoURL = e.data.split("&")[1];
         document.getElementById("profile-pic").src = "./img/upload/" + photoURL;
         document.getElementById("photo").style.backgroundImage = 'url("./img/upload/' + photoURL + '")';
+    } else if (e.data.includes("editText1")) {
+        console.log("接收到修改教育背景信息");
+        var editMsg = e.data.split("&")[1];
+        document.getElementById("th1").innerHTML = editMsg;
+        document.getElementById("jybj").innerHTML = editMsg;
     }
 });

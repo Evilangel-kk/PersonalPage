@@ -255,6 +255,20 @@ window.onload = function() {
     var confirmChange = document.getElementById("confirmChange");
     var main = document.getElementById("main");
 
+    // 主要内容修改
+    var editBtn1 = document.getElementById("editBtn1");
+    // var editBtn2 = document.getElementById("editBtn2");
+    // var editBtn3 = document.getElementById("editBtn3");
+    // var editBtn4 = document.getElementById("editBtn4");
+    var textArea1 = document.getElementById("jybj");
+    // var textArea2 = document.getElementById("xmjy");
+    // var textArea3 = document.getElementById("sxjl");
+    // var textArea4 = document.getElementById("jsz");
+    var th1 = document.getElementById("th1");
+    // var th2 = document.getElementById("th2");
+    // var th3 = document.getElementById("th3");
+    // var th4 = document.getElementById("th4");
+
 
 
     // 取消修改
@@ -304,4 +318,22 @@ window.onload = function() {
     };
 
     let form = document.getElementById("uploadPicture");
+
+    // 修改教育背景
+    editBtn1.onclick = () => {
+        if (editBtn1.innerHTML == "编辑") {
+            th1.style.display = "none";
+            textArea1.style.display = "block";
+            editBtn1.innerHTML = "保存";
+        } else {
+            var t = textArea1.value;
+            console.log(t);
+            var msg = "editText1&" + u + "&" + t;
+            socket.send(msg);
+            th1.style.display = "block";
+            textArea1.style.display = "none";
+            // console.log("修改成功");
+            editBtn1.innerHTML = "编辑";
+        }
+    }
 }

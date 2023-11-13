@@ -354,6 +354,39 @@ span#mark {
     position: relative;
 }
 
+#content h2 {
+    margin: 20px;
+    margin-left: 50px;
+}
+
+#content textarea {
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    background: none;
+    margin: 20px;
+    margin-left: 100px;
+    padding: 10px;
+    color: white;
+    border: 3px solid black;
+    display: none;
+}
+
+#content .editbtn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    background-color: orange;
+    cursor: url('img/point.png'), auto;
+    display: none;
+}
+
 .message {
     position: absolute;
     width: 100%;
@@ -367,6 +400,7 @@ span#mark {
 
 .messages h2 {
     font-weight: 600;
+    margin: 20px;
 }
 
 .texts p {

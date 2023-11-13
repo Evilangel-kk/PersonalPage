@@ -49,6 +49,8 @@ function judge(userId, Password, connect) {
                         pictureName = result[0].Photo;
                         var photoURL = "photo&" + result[0].Photo;
                         connect.send(photoURL);
+                        var editjybjText = "editText1&" + result[0].JYBJ;
+                        connect.send(editjybjText);
                     });
                 }
             }
@@ -64,6 +66,7 @@ const ws = require('../node_modules/nodejs-websocket');
 const express = require('express');
 const multiparty = require("multiparty");
 const fs = require('fs');
+const { log } = require("console");
 const PORT = 8080;
 
 // 每次有用户连接上来都会给用户创建一个connect对象
@@ -90,6 +93,8 @@ const server = ws.createServer(connect => {
                 pictureName = result[0].Photo;
                 var photoURL = "photo&" + result[0].Photo;
                 connect.send(photoURL);
+                var editjybjText = "editText1&" + result[0].JYBJ;
+                connect.send(editjybjText);
             });
         } else if (msg[0] == "confirmChange") {
             console.log(msg);
@@ -128,6 +133,19 @@ const server = ws.createServer(connect => {
                 var sendMsg = "update&" + result[0].Name + "&" + result[0].Sex + "&" + result[0].Birth + "&" + result[0].Phone + "&" + result[0].Email + "&" + result[0].Address;
                 connect.send(sendMsg);
                 connect.send("photo&" + pictureName);
+            });
+        } else if (msg[0] == "editText1") {
+            var jybjText = [];
+            jybjText[0] = msg[2];
+            jybjText[1] = msg[1];
+            console.log(jybjText);
+            connection.query("update personal set jybj=? where id=?", jybjText, (err, result) => {
+                console.log("修改教育背景");
+            });
+            connection.query("select * from personal where id=?", msg[1], (err, result) => {
+                console.log(result[0]);
+                var sendMsg = "editText1&" + result[0].JYBJ;
+                connect.send(sendMsg);
             });
         }
     });

@@ -43,6 +43,10 @@ function judge(userId, Password, connect) {
                     connection.query("update personal set times=times+1 where id=?", userId, (err, result) => {
                         console.log("访问次数加一");
                     });
+                    connection.query("select times from personal where id='admin'", (err, result) => {
+                        console.log(result[0].times);
+                        connect.send("visit&" + result[0].times);
+                    });
                     connection.query("select * from personal where id=?", userId, (err, result) => {
                         var sendMsg = "update&" + result[0].Name + "&" + result[0].Sex + "&" + result[0].Birth + "&" + result[0].Phone + "&" + result[0].Email + "&" + result[0].Address;
                         connect.send(sendMsg);

@@ -53,7 +53,12 @@ socket.addEventListener("message", function(e) {
     } else if (e.data.includes("editText1")) {
         console.log("接收到修改教育背景信息");
         var editMsg = e.data.split("&")[1];
-        document.getElementById("th1").innerHTML = editMsg;
         document.getElementById("jybj").innerHTML = editMsg;
+        //替换所有的换行符
+        editMsg = editMsg.replace(/\r\n/g, "<br>") //兼容i7、i8
+        editMsg = editMsg.replace(/\n/g, "<br>"); //i9及以上
+        //替换所有的空格（中文空格、英文空格都会被替换）
+        editMsg = editMsg.replace(/\s/g, "&nbsp;");
+        document.getElementById("th1").innerHTML = editMsg;
     }
 });

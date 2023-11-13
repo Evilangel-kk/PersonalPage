@@ -256,6 +256,7 @@ window.onload = function() {
     var main = document.getElementById("main");
 
     // 主要内容修改
+    var enterAdd = document.getElementById("enter");
     var editBtn1 = document.getElementById("editBtn1");
     // var editBtn2 = document.getElementById("editBtn2");
     // var editBtn3 = document.getElementById("editBtn3");
@@ -322,6 +323,7 @@ window.onload = function() {
     // 修改教育背景
     editBtn1.onclick = () => {
         if (editBtn1.innerHTML == "编辑") {
+
             th1.style.display = "none";
             textArea1.style.display = "block";
             editBtn1.innerHTML = "保存";
@@ -335,5 +337,5 @@ window.onload = function() {
             // console.log("修改成功");
             editBtn1.innerHTML = "编辑";
         }
-    }
+    };
 }
